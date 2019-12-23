@@ -5,6 +5,7 @@
 <table class="table container">
   <thead>
   <tr>
+    <th scope="col"></th>
     <th scope="col">Date</th>
     <th scope="col">Weight</th>
     <th scope="col" *ngIf="showBodyFat">Body Fat %</th>
@@ -12,6 +13,11 @@
   </thead>
   <tbody>
   <tr *ngFor="let e of entries">
+    <td style="width: 20px;">
+      <a [routerLink]="['/entries/' + e.id]">
+        <span class="detailIcon"><i class="fas fa-info-circle"></i></span>
+      </a>
+    </td>
     <td>{{e.date | date:'yyyy/MM/dd'}} </td>
     <td>{{e.weight}} lbs</td>
     <td *ngIf="showBodyFat">{{e.bodyfat | percent}}</td>
