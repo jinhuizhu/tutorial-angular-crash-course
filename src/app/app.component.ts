@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IdentityService} from "./identity.service";
 
 @Component({
   selector: 'ng-crash-course-root',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
+  constructor(private identitySvc: IdentityService) {
   }
 }

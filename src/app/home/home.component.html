@@ -1,16 +1,20 @@
+<div class="container">
+  <button (click)="toggleBodyFat()" class="btn btn-primary my-sm-5">{{labelShowBodyFat}}</button>
+</div>
+
 <table class="table container">
   <thead>
   <tr>
     <th scope="col">Date</th>
     <th scope="col">Weight</th>
-    <th scope="col">Body Fat %</th>
+    <th scope="col" *ngIf="showBodyFat">Body Fat %</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let e of entrySvc.sortedEntries">
     <td>{{e.date | date:'yyyy/MM/dd'}} </td>
     <td>{{e.weight}} lbs</td>
-    <td >{{e.bodyfat | percent}}</td>
+    <td *ngIf="showBodyFat">{{e.bodyfat | percent}}</td>
   </tr>
   </tbody>
 </table>
