@@ -21,10 +21,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Date</td>
-      <td>Weight</td>
-      <td >Body Fat %</td>
+    <tr *ngFor="let entry of entrySvc.sortedEntries">
+      <td>{{entry.date | date:'yyyy/MM/dd'}} </td>
+      <td>{{entry.weight}} lbs</td>
+      <td >{{entry.bodyfat | percent}}</td>
     </tr>
     </tbody>
   </table>

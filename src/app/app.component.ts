@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import {WeightEntriesService} from "./weight-entries.service";
 
 @Component({
-  selector: 'app-root',
+  selector: 'ng-crash-course-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tutorial-angular-crash-course';
+
+  constructor(private entrySvc: WeightEntriesService) {
+
+  }
+
+
 }
