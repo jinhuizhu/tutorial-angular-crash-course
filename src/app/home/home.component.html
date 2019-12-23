@@ -1,0 +1,16 @@
+<table class="table container">
+  <thead>
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Weight</th>
+    <th scope="col">Body Fat %</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let e of entrySvc.sortedEntries">
+    <td>{{e.date | date:'yyyy/MM/dd'}} </td>
+    <td>{{e.weight}} lbs</td>
+    <td >{{e.bodyfat | percent}}</td>
+  </tr>
+  </tbody>
+</table>

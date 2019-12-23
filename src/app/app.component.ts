@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {WeightEntriesService} from "./weight-entries.service";
 
 @Component({
   selector: 'ng-crash-course-root',
@@ -8,9 +7,6 @@ import {WeightEntriesService} from "./weight-entries.service";
 })
 export class AppComponent {
 
-  constructor(private entrySvc: WeightEntriesService) {
-
+  constructor() {
   }
-
-
 }
