@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header text-left">
+    <h5>New Weight Entry</h5>
+  </div>
+
+  <div class="card-body">
+    <form #entryForm="ngForm" class="form-inline">
+      <!--Weight-->
+      <label for="weight" class="sr-only">Weight</label>
+      <input type="text" name="weight" id="weight" class="form-control my-1 mr-sm-2" autocomplete="off" required
+             placeholder="Weight" [(ngModel)]="model.weight">
+
+      <!--Body Fat-->
+      <label for="bodyFat" class="sr-only">Body Fat %</label>
+      <input *ngIf="showBodyFat" type="text" name="bodyFat" id="bodyFat" class="form-control my-1 mr-sm-2"
+             autocomplete="off" placeholder="Body Fat %" [(ngModel)]="model.bodyfat">
+
+      <!--Entry Date-->
+      <label for="entryDate" class="sr-only">Body Fat %</label>
+      <input type="text" name="entryDate" id="entryDate" class="form-control my-1 mr-sm-2" autocomplete="off" required
+             placeholder="Date(mm/dd/yyyy)" [(ngModel)]="model.date">
+
+      <button [disabled]="entryForm.form.invalid" (click)="createEntry(); resetForm()" class="btn btn-primary my-1">
+        Save
+      </button>
+    </form>
+  </div>
+</div>

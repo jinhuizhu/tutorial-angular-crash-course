@@ -11,10 +11,18 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let e of entrySvc.sortedEntries">
+  <tr *ngFor="let e of entries">
     <td>{{e.date | date:'yyyy/MM/dd'}} </td>
     <td>{{e.weight}} lbs</td>
     <td *ngIf="showBodyFat">{{e.bodyfat | percent}}</td>
   </tr>
   </tbody>
 </table>
+
+<div class="container row">
+  <div class="col-sm">
+    <ng-crash-course-new-weight-entry [showBodyFat]="this.showBodyFat" (createNewEntryEvent)="createNewEntry($event)">
+    </ng-crash-course-new-weight-entry>
+  </div>
+  <div class="col-sm">&nbsp;</div>
+</div>

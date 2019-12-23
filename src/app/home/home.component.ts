@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WeightEntriesService} from "../weight-entries.service";
+import {Entry} from "../model/entry";
 
 @Component({
   selector: 'ng-crash-course-home',
@@ -10,10 +11,12 @@ export class HomeComponent implements OnInit {
 
   private showBodyFat: boolean = false;
   private labelShowBodyFat: string = 'Show Body Fat';
+  private entries: Entry[];
 
-  constructor(private entrySvc: WeightEntriesService) { }
+  constructor(private entriesService: WeightEntriesService) { }
 
   ngOnInit() {
+    this.updateData();
   }
 
   toggleBodyFat() {
@@ -23,5 +26,17 @@ export class HomeComponent implements OnInit {
     } else {
       this.labelShowBodyFat = 'Show Body Fat';
     }
+  }
+
+  createNewEntry(entry: Entry) {
+    this.entriesService.addEntry(entry).subscribe( () => {
+      this.updateData();
+    });
+  }
+
+  private updateData() {
+    this.entriesService.getEntries().subscribe( entries => {
+      this.entries = entries;
+    });
   }
 }
