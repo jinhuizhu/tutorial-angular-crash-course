@@ -8,13 +8,15 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import { NewWeightEntryComponent } from './new-weight-entry/new-weight-entry.component';
 import {HttpClientModule} from "@angular/common/http";
+import { WeightEntryDetailComponent } from './weight-entry-detail/weight-entry-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NewWeightEntryComponent
+    NewWeightEntryComponent,
+    WeightEntryDetailComponent
   ],
   imports: [
     BrowserModule,
