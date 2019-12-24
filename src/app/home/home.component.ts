@@ -39,4 +39,9 @@ export class HomeComponent implements OnInit {
       this.entries = entries;
     });
   }
+
+  deleteEntry(id: number) {
+    this.entriesService.deleteEntry(id).subscribe();
+    this.updateData();
+  }
 }

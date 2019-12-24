@@ -6,6 +6,7 @@
   <thead>
   <tr>
     <th scope="col"></th>
+    <th scope="col"></th>
     <th scope="col">Date</th>
     <th scope="col">Weight</th>
     <th scope="col" *ngIf="showBodyFat">Body Fat %</th>
@@ -17,6 +18,9 @@
       <a [routerLink]="['/entries/' + e.id]">
         <span class="detailIcon"><i class="fas fa-info-circle"></i></span>
       </a>
+    </td>
+    <td style="width: 20px;">
+      <span class="deleteIcon" (click)="deleteEntry(e.id)"><i class="fas fa-trash-alt"></i></span>
     </td>
     <td>{{e.date | date:'yyyy/MM/dd'}} </td>
     <td>{{e.weight}} lbs</td>
